@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head dir="ltr">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+        <link rel="stylesheet" type="text/css" href="styles.css">         
+        <title>JS Demo</title>
+    <body>
+        <script type="text/javascript">
+            function alertbox(){
+              var alertboxtext=window.prompt("What do you want the alert to say?")  
+              var myalertbox=window.open("", "Alert Box", "width=500,height=500");
+              myalertbox.document.write
+              ("<meta name=viewport content=\"width=device-width, initial-scale=1\"><style type=\"text/css\">body{font-size:28px}</style><body bgcolor='#ADD8E6'>");
+              myalertbox.document.write(alertboxtext);
+            }
+            function securitydemo(){
+              window.alert("The username is \'test\' and the password is \'test\' \(without the quotations\)");
+              window.open("https://html5-workspace-inthezone006.c9users.io/main/securitydemo/Success");
+            }
+        </script>
+        <a href="https://html5-workspace-inthezone006.c9users.io/main/index.html">&lt;&lt;Back</a>
+        <br>
+        <br>
+        <form>
+            <fieldset>
+                <legend>Javascript</legend>
+                <button onclick="alertbox();">Popup Alert</button>
+                <button onclick="securitydemo();">Security Demo</button>   
+            </fieldset>
+        </form>
+    </body>
+</html>

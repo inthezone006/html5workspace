@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Please log in to continue"
+AuthUserFile /home/ubuntu/workspace/main/securitydemo/.htpasswd
+Require valid-user

@@ -53,19 +53,25 @@ function checkcode(){
         document.getElementById("commanddetail").innerHTML="Error: \'webdemo.html\' not found";
     }
     else if(mytext==browser){
-        document.getElementById("commanddetail").innerHTML="The correct usage of the \'chrome\' command is chrome <i>filename</i>";
+        document.getElementById("commanddetail").innerHTML="Unknown command; view chrome/? for help";
     }
     else if(mytext=="sudo"){
         document.getElementById("commanddetail").innerHTML="Error: Already signed in as root";
     }
-    else if(mytext=="whoami"){
+    else if(mytext=="whoami" || mytext=="ver"){
         document.getElementById("commanddetail").innerHTML=navigator.userAgent+"<br>"+browser;
     }
     else if(mytext=="?" || mytext=="/?"){
-        document.getElementById("commanddetail").innerHTML=browser+"<br>ls<br>cat<br>cd<br>sudo<br>whoami<br>exit";
+        document.getElementById("commanddetail").innerHTML=browser+"<br>ls<br>cat<br>eog<br>cd<br>sudo<br>whoami<br>exit";
     }
     else if(mytext=="cat checkthecode.js" && issecuritydemo==false){
         window.location.assign("checkthecode.js");
+    }
+    else if(mytext=="eog terminal-25.ico" && issecuritydemo==false){
+        window.location.assign("terminal-25.ico");
+    }
+    else if(mytext=="eog terminal-25.ico" && issecuritydemo==true){
+        document.getElementById("commanddetail").innerHTML="Error: \'terminal-25.ico\' not found";
     }
     else if(mytext=="cat styles.css" && issecuritydemo==false){
         window.location.assign("styles.css");
@@ -104,34 +110,34 @@ function checkcode(){
         document.getElementById("commanddetail").innerHTML=".htaccess<br>.htpasswd";
     }
     else if(mytext=="ls" && issecuritydemo==false){
-        document.getElementById("commanddetail").innerHTML="securitydemo<br>about.html<br>checkthecode.js<br>index.html<br>styles.css<br>useragent.js<br>webdemo.html<br>webdemo.js";
+        document.getElementById("commanddetail").innerHTML="securitydemo<br>checkthecode.js<br>index.html<br>styles.css<br>terminal-25.ico<br>useragent.js<br>webdemo.js";
     }
     else if(mytext=="exit"){
         window.location.assign("about:blank");
     }
-    else if(mytext==browser+" ?" || mytext==browser+" /?" || mytext==browser+"?" || mytext==browser+"/?"){
+    else if(mytext==browser+" ?" || mytext==browser+" /?" || mytext==browser+"?" || mytext==browser+"/?" || mytext==browser+" --help" || mytext==browser+"--help"){
         document.getElementById("commanddetail").innerHTML="[ie, chrome, firefox, opera, safari] [<i>filename</i>]";
     }
-    else if(mytext=="ls?" || mytext=="ls ?" || mytext=="ls/?" || mytext=="ls /?"){
-        document.getElementById("commanddetail").innerHTML="ls";
+    else if(mytext=="ls?" || mytext=="ls ?" || mytext=="ls/?" || mytext=="ls /?" || mytext=="ls --help" || mytext=="ls--help"){
+        document.getElementById("commanddetail").innerHTML="ls lists the contents inside a folder";
     }
-    else if(mytext=="cat?" || mytext=="cat ?" || mytext=="cat/?" || mytext=="cat /?"){
-        document.getElementById("commanddetail").innerHTML="cat [<i>filename</i>]";
+    else if(mytext=="cat?" || mytext=="cat ?" || mytext=="cat/?" || mytext=="cat /?" || mytext=="cat --help" || mytext=="cat--help"){
+        document.getElementById("commanddetail").innerHTML="cat [<i>filename</i>] can be used to view text files (*.js, *.css)";
     }
-    else if(mytext=="cd?" || mytext=="cd ?" || mytext=="cd/?" || mytext=="cd /?"){
-        document.getElementById("commanddetail").innerHTML="cd [<i>directory</i>]";
+    else if(mytext=="cd?" || mytext=="cd ?" || mytext=="cd/?" || mytext=="cd /?" || mytext=="cd --help" || mytext=="cd--help"){
+        document.getElementById("commanddetail").innerHTML="cd [<i>directory</i>] changes to the specified directory";
     }
-    else if(mytext=="sudo?" || mytext=="sudo ?" || mytext=="sudo/?" || mytext=="sudo /?"){
-        document.getElementById("commanddetail").innerHTML="sudo";
+    else if(mytext=="sudo?" || mytext=="sudo ?" || mytext=="sudo/?" || mytext=="sudo /?" || mytext=="sudo --help" || mytext=="sudo--help"){
+        document.getElementById("commanddetail").innerHTML="sudo lowers the terminal to the root level";
     }
-    else if(mytext=="whoami?" || mytext=="whoami ?" || mytext=="whoami/?" || mytext=="whoami /?"){
-        document.getElementById("commanddetail").innerHTML="whoami";
+    else if(mytext=="eog?" || mytext=="eog ?" || mytext=="eog/?" || mytext=="eog /?" || mytext=="eog --help" || mytext=="eog--help"){
+        document.getElementById("commanddetail").innerHTML="eog [<i>filename</i>] opens an image";
     }
-    else if(mytext=="exit?" || mytext=="exit ?" || mytext=="exit/?" || mytext=="exit /?"){
-        document.getElementById("commanddetail").innerHTML="ls";
+    else if(mytext=="whoami?" || mytext=="whoami ?" || mytext=="whoami/?" || mytext=="whoami /?" || mytext=="ver?" || mytext=="ver ?" || mytext=="ver/?" || mytext=="ver /?" || mytext=="ver --help" || mytext=="ver--help"  || mytext=="whoami --help" || mytext=="whoami--help"){
+        document.getElementById("commanddetail").innerHTML="whoami/ver gives information on the user";
     }
-    else if(mytext==browser && mytext.indexOf("https") >= 0 || mytext.indexOf("http") >= 0){
-        window.location.assign(mytext);
+    else if(mytext=="exit?" || mytext=="exit ?" || mytext=="exit/?" || mytext=="exit /?" || mytext=="exit --help" || mytext=="exit--help"){
+        document.getElementById("commanddetail").innerHTML="exit exits the terminal";
     }
     else{
         document.getElementById("commanddetail").innerHTML="Unknown command \'"+mytext+"\'";
